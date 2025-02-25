@@ -1,18 +1,24 @@
 package org.example;
 
 import org.example.Tasks.IntHolder;
-import org.example.Tasks.Point;
-import org.example.Tasks.PointModify;
+import org.example.Tasks.Point.Point;
+import org.example.Tasks.Point.PointModify;
 
+import static java.lang.Math.*;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int number = 1;
+        /**
+         * Пример под static import
+         */
+        System.out.println(sqrt(pow(3, 2) + pow(2, 2)));
 
+        PointModify p = new PointModify();
+
+        int number = 1;
         while(number != 0) {
 
             System.out.print("Введите номер задачи 1 - 18 (0 - для выхода): ");

@@ -1,8 +1,9 @@
-package org.example.Tasks;
+package org.example.Tasks.Point;
 
 public class PointModify {
     private double x;
     private double y;
+    double z;
 
     public PointModify() {
         x = 0;

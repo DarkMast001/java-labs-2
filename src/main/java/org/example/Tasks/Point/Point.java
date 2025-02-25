@@ -1,4 +1,8 @@
-package org.example.Tasks;
+package org.example.Tasks.Point;
+
+/**
+ * Immutable класс Point
+ */
 
 public final class Point {
     private final double x;
