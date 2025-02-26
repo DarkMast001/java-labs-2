@@ -1,12 +1,15 @@
 package org.example;
 
+import org.example.Tasks.Car;
 import org.example.Tasks.IntHolder;
 import org.example.Tasks.Point.Point;
 import org.example.Tasks.Point.PointModify;
+import org.example.Tasks.RandomNumbers;
 
 import static java.lang.Math.*;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -72,36 +75,28 @@ public class Main {
                     p2.scale(0.5);
                     System.out.println("x: " + p2.getX() + " y: " + p2.getY());
                     break;
-                case 7:
-
-                    break;
-                case 8:
-
-                    break;
                 case 9:
-
+                    Car car = new Car(2, 10);
+                    car.driveTo(3, 3);
+                    System.out.println(car.getFuelLevel());
                     break;
                 case 10:
+                    ArrayList<Integer> arrList = new ArrayList<>();
+                    arrList.add(1);
+                    arrList.add(2);
+                    arrList.add(3);
+                    arrList.add(4);
+                    arrList.add(5);
+                    System.out.println(RandomNumbers.getRandom(arrList));
 
-                    break;
-                case 11:
-
-                    break;
-                case 13:
-
-                    break;
-                case 14:
-
-                    break;
-                case 15:
-
+                    int[] arr = new int[] {1, 2, 3, 4, 5, 6};
+                    System.out.println(RandomNumbers.getRandom(arr));
                     break;
                 case 16:
+
                     break;
                 case 17:
 
-                    break;
-                case 18:
                     break;
                 default:
                     System.out.println("Неверно!");
