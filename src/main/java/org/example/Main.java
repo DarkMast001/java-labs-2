@@ -1,30 +1,25 @@
 package org.example;
 
-import org.example.Tasks.Car;
-import org.example.Tasks.IntHolder;
+import org.example.Tasks.*;
 import org.example.Tasks.Point.Point;
 import org.example.Tasks.Point.PointModify;
-import org.example.Tasks.RandomNumbers;
+import org.example.Tasks.Fabric.Formatter;
 
 import static java.lang.Math.*;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /**
-         * Пример под static import
-         */
-        System.out.println(sqrt(pow(3, 2) + pow(2, 2)));
-
         PointModify p = new PointModify();
 
         int number = 1;
         while(number != 0) {
 
-            System.out.print("Введите номер задачи 1 - 18 (0 - для выхода): ");
+            System.out.print("Введите номер задачи 1 - 19 (0 - для выхода): ");
             Scanner in = new Scanner(System.in);
             number = in.nextInt();
             switch (number) {
@@ -77,7 +72,8 @@ public class Main {
                     break;
                 case 9:
                     Car car = new Car(2, 10);
-                    car.driveTo(3, 3);
+                    car.driveTo(3, 4);
+
                     System.out.println(car.getFuelLevel());
                     break;
                 case 10:
@@ -93,10 +89,85 @@ public class Main {
                     System.out.println(RandomNumbers.getRandom(arr));
                     break;
                 case 16:
+                    Queue q = new Queue();
+                    q.pushBack("q");
+                    q.pushBack("w");
+                    q.pushBack("e");
+                    System.out.println(q);
+                    q.popFront();
+                    System.out.println(q);
+                    q.popFront();
+                    System.out.println(q);
+                    q.popFront();
+                    System.out.println(q);
 
                     break;
                 case 17:
+                    Queue queue = new Queue();
+                    queue.pushBack("q");
+                    queue.pushBack("w");
+                    queue.pushBack("e");
+                    queue.pushBack("r");
+                    queue.pushBack("t");
+                    queue.pushBack("y");
 
+//                    Queue.Iterator iterator = queue.iterator();
+//
+//                    while (iterator.hasNext()) {
+//                        System.out.println(iterator.next());
+//                    }
+//
+//                    iterator = queue.iterator();
+//                    while (iterator.hasNext()) {
+//                        String element = iterator.next();
+//                        if (element.equals("w")) {
+//                            iterator.remove();
+//                        }
+//                    }
+                    queue.popFront();
+                    queue.popFront();
+
+                    System.out.println(queue);
+
+                    break;
+                case 18:
+                    Circle c1 = new Circle(0, 0, 5);
+                    Circle c2 = new Circle(6, 0, 5);
+                    Circle c3 = new Circle(0, 0, 1);
+                    Circle c4 = new Circle(2, 0, 1);
+                    Circle c5 = new Circle(0, 0, 1);
+                    Circle c6 = new Circle(2, 2, 1);
+                    Circle c7 = new Circle(0, 0, 5);
+
+                    List<PointModify> points = Circle.intersections(c1, c2);
+                    List<PointModify> points2 = Circle.intersections(c3, c4);
+                    List<PointModify> points3 = Circle.intersections(c5, c6);
+                    List<PointModify> points4 = Circle.intersections(c5, c1);
+                    List<PointModify> points5 = Circle.intersections(c1, c7);
+
+                    System.out.println(points);
+                    System.out.println(points2);
+                    System.out.println(points3);
+                    System.out.println(points4);
+                    System.out.println(points5);
+
+//                    if (points != null && points.isEmpty()) {
+//                        System.out.println("Окружности не пересекаются");
+//                    } else {
+//                        System.out.println("Точки пересечения:");
+//                        for (PointModify point : points2) {
+//                            System.out.println("(" + point.getX() + ", " + point.getY() + ")");
+//                        }
+//                    }
+                    break;
+                case 19:
+                    Formatter currencyFormatter = Formatter.getCurrencyInstance();
+                    Formatter percentFormatter = Formatter.getPercentInstance();
+
+                    double x = 0.1;
+
+                    System.out.println(currencyFormatter.format(x));
+                    System.out.println(percentFormatter.format(x));
                     break;
                 default:
                     System.out.println("Неверно!");

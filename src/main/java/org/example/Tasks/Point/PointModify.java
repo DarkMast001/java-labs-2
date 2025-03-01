@@ -3,7 +3,6 @@ package org.example.Tasks.Point;
 public class PointModify {
     private double x;
     private double y;
-    double z;
 
     public PointModify() {
         x = 0;
@@ -31,5 +30,13 @@ public class PointModify {
     public void scale(double value) {
         this.x *= value;
         this.y *= value;
+    }
+
+    @Override
+    public String toString() {
+        return "PointModify{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
